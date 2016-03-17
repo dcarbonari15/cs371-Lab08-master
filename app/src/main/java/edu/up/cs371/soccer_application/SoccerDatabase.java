@@ -197,19 +197,12 @@ public class SoccerDatabase implements SoccerDB {
     public SoccerPlayer playerNum(int idx, String teamName) {
         int i = 0;
         if(teamName == null){
-            if(idx == 0){
-                for (SoccerPlayer s : table.values()) {
-                    i++;
-                    if (i == 1) {
-                        return s;
-                    }
-                }
-            }
             for (SoccerPlayer s : table.values()) {
-                i++;
+
                 if (i == idx) {
                     return s;
                 }
+                i++;
             }
         }
         for (SoccerPlayer s : table.values()) {
